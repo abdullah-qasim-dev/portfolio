@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Color system ----
+     Base: near-black signal-void navy (not pure black — has a blue cast, like a
+     dim console). Accents: violet (primary "model" color) + cyan (secondary
+     "signal" color) + a terminal-green used ONLY for live/active states. */
+  --color-void-950: #05060b;
+  --color-void-900: #090b14;
+  --color-void-800: #0d0f1c;
+  --color-void-700: #121524;
+  --color-void-600: #1a1e33;
+
+  --color-mist-400: #6b7191;
+  --color-mist-300: #8b91ae;
+  --color-mist-200: #b4b9d1;
+  --color-mist-100: #e3e5f2;
+
+  --color-violet-500: #7c5cff;
+  --color-violet-400: #9b81ff;
+  --color-violet-300: #bcabff;
+
+  --color-cyan-500: #22d3ee;
+  --color-cyan-400: #5fe3f5;
+
+  --color-signal-500: #34d399;
+
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --breakpoint-xs: 420px;
+
+  --glass-tint: 255 255 255;
+}
+
+html.light {
+  --glass-tint: 20 22 40;
+}
+
+/* ---- Light mode overrides ----
+   Dark is the default brand experience; light mode remaps the same tokens
+   so every component (which only ever reads var(--color-*)) repaints for
+   free with no component-level branching. */
+html.light {
+  --color-void-950: #f6f7fb;
+  --color-void-900: #eef0f8;
+  --color-void-800: #e6e8f4;
+  --color-void-700: #dcdff0;
+  --color-void-600: #c7cbe6;
+
+  --color-mist-400: #6b7191;
+  --color-mist-300: #4c5170;
+  --color-mist-200: #2b2e45;
+  --color-mist-100: #12131f;
+}
+
+html.light body {
+  cursor: none;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  background: var(--color-void-950);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-void-950);
+  color: var(--color-mist-100);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-violet-500) 40%, transparent);
+  color: white;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-void-600);
+  border-radius: 999px;
+  border: 2px solid var(--color-void-950);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-violet-500);
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Focus visibility (accessibility) ---- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-violet-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---- Reusable utility classes ---- */
+@utility glass {
+  background: rgb(var(--glass-tint) / 4%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgb(var(--glass-tint) / 10%);
+}
+
+@utility glass-strong {
+  background: rgb(var(--glass-tint) / 6%);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgb(var(--glass-tint) / 14%);
+}
+
+@utility text-gradient {
+  background: linear-gradient(115deg, var(--color-violet-300), var(--color-cyan-400) 65%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility font-mono-tag {
+  font-family: var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, white 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, white 4%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---- Blinking cursor for terminal-style typing ---- */
+@keyframes blink-caret {
+  0%, 45% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.caret {
+  animation: blink-caret 1s step-end infinite;
+}
+
+/* ---- Signal pulse (used on live indicators / section eyebrows) ---- */
+@keyframes signal-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-signal-500) 55%, transparent); }
+  70% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-signal-500) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-signal-500) 0%, transparent); }
+}
+.signal-dot {
+  animation: signal-pulse 2.2s infinite;
+}

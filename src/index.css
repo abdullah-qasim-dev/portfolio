@@ -31,11 +31,17 @@
 
   --breakpoint-xs: 420px;
 
-  --glass-tint: 255 255 255;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-bg-strong: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-strong: rgba(255, 255, 255, 0.14);
 }
 
 html.light {
-  --glass-tint: 20 22 40;
+  --glass-bg: rgba(20, 22, 40, 0.04);
+  --glass-bg-strong: rgba(20, 22, 40, 0.06);
+  --glass-border: rgba(20, 22, 40, 0.1);
+  --glass-border-strong: rgba(20, 22, 40, 0.14);
 }
 
 /* ---- Light mode overrides ----
@@ -126,17 +132,17 @@ textarea:focus-visible {
 
 /* ---- Reusable utility classes ---- */
 @utility glass {
-  background: rgb(var(--glass-tint) / 4%);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgb(var(--glass-tint) / 10%);
+  border: 1px solid var(--glass-border);
 }
 
 @utility glass-strong {
-  background: rgb(var(--glass-tint) / 6%);
+  background: var(--glass-bg-strong);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgb(var(--glass-tint) / 14%);
+  border: 1px solid var(--glass-border-strong);
 }
 
 @utility text-gradient {

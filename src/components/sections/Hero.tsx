@@ -26,7 +26,7 @@ export default function Hero() {
         >
           <div className="font-mono-tag mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[11px] text-signal-500">
             <span className="h-1.5 w-1.5 rounded-full bg-signal-500 signal-dot" />
-            model status: available for work
+            Status: available for work
           </div>
 
           <h1 className="font-display text-4xl font-bold leading-[1.08] text-mist-100 sm:text-5xl md:text-6xl">
@@ -98,10 +98,10 @@ export default function Hero() {
                 loading="eager"
               />
             </div>
-            <div className="glass absolute -bottom-4 -left-4 rounded-xl px-3 py-2 text-center sm:-left-8">
+            {/* <div className="glass absolute -bottom-4 -left-4 rounded-xl px-3 py-2 text-center sm:-left-8">
               <p className="font-mono text-[10px] text-mist-400">status</p>
               <p className="text-xs font-semibold text-signal-500">Open to work</p>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </Container>

@@ -129,6 +129,7 @@ export const PROJECTS: ProjectItem[] = [
       "BLEU/ROUGE evaluation",
       "Student misconception analysis",
     ],
+    github: "https://github.com/abdullah-qasim-dev/LLM-K12-Feedback-Generator",
     status: "shipped",
   },
   {
@@ -143,6 +144,7 @@ export const PROJECTS: ProjectItem[] = [
       "Mobile-responsive interface",
       "Color-coded alerts",
     ],
+    github: "https://github.com/abdullah-qasim-dev/Rear-Obstacle-Detection-YOLOv8",
     status: "shipped",
   },
   {
@@ -156,6 +158,7 @@ export const PROJECTS: ProjectItem[] = [
       "Classification models",
       "Churn prediction",
     ],
+    github: "https://github.com/abdullah-qasim-dev/Customer-Churn-Prediction",
     status: "shipped",
   },
   {
@@ -169,6 +172,7 @@ export const PROJECTS: ProjectItem[] = [
       "Multiple ML models",
       "Performance evaluation",
     ],
+    github: "https://github.com/abdullah-qasim-dev/Stock-Price-Prediction-AAPL-",
     status: "shipped",
   },
   {
@@ -182,6 +186,7 @@ export const PROJECTS: ProjectItem[] = [
       "Performance evaluation",
       "Analytical reporting",
     ],
+    github: "https://github.com/abdullah-qasim-dev/stock-crypto-data-warehouse",
     status: "shipped",
   },
   {
@@ -195,6 +200,7 @@ export const PROJECTS: ProjectItem[] = [
       "Bitcoin market analysis",
       "Unsupervised learning",
     ],
+    github: "https://github.com/abdullah-qasim-dev/Bitcoin-Price-Clustering-Analysis",
     status: "shipped",
   },
 ];
@@ -204,23 +210,20 @@ export const TECH_STACK: TechCategory[] = [
   { category: "Machine Learning & AI", icon: "FiCpu", items: ["Scikit-Learn", "TensorFlow", "PyTorch", "Hugging Face", "NLP", "Prompt Engineering"] },
   { category: "Computer Vision", icon: "FiEye", items: ["OpenCV", "YOLOv8"] },
   { category: "Data Engineering", icon: "FiDatabase", items: ["PostgreSQL", "ETL", "ELT", "Data Warehousing"] },
-  { category: "Web Development", icon: "FiGlobe", items: ["Flask", "FastAPI", "Streamlit", "HTML", "CSS", "JavaScript"] },
+  { category: "Web Development", icon: "FiGlobe", items: ["FastAPI", "Flask",  "Streamlit", "HTML", "CSS", "JavaScript"] },
   { category: "Data Analytics", icon: "FiBarChart2", items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Power BI"] },
   { category: "Tools", icon: "FiTool", items: ["Git", "GitHub", "VS Code", "Google Colab", "Jupyter Notebook"] },
 ];
 
 export const SKILLS: SkillItem[] = [
-  { name: "Python", level: 92 },
-  { name: "Machine Learning", level: 85 },
-  { name: "NLP", level: 80 },
-  { name: "Computer Vision", level: 78 },
-  { name: "SQL", level: 85 },
-  { name: "Data Engineering", level: 75 },
-  { name: "Flask", level: 80 },
-  { name: "Problem Solving", level: 90 },
-  { name: "Data Structures & Algorithms", level: 85 },
-  { name: "OOP", level: 88 },
-  { name: "Communication", level: 82 },
+  { name: "Machine Learning" },
+  { name: "Natural Language Processing" },
+  { name: "Computer Vision" },
+  { name: "Data Engineering" },
+  { name: "Problem Solving" },
+  { name: "Data Structures & Algorithms" },
+  { name: "Object-Oriented Programming" },
+  { name: "Communication" },
 ];
 
 export const EDUCATION: EducationItem[] = [

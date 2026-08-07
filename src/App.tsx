@@ -18,7 +18,6 @@ import Certificates from "@/components/sections/Certificates";
 import Achievements from "@/components/sections/Achievements";
 import Services from "@/components/sections/Services";
 import GitHubSection from "@/components/sections/GitHubSection";
-import Blog from "@/components/sections/Blog";
 import Contact from "@/components/sections/Contact";
 
 export default function App() {
@@ -43,7 +42,6 @@ export default function App() {
         <Achievements />
         <Services />
         <GitHubSection />
-        <Blog />
         <Contact />
       </main>
 

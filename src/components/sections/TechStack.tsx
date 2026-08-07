@@ -1,5 +1,6 @@
 import * as Icons from "react-icons/fi";
 import { TECH_STACK } from "@/data/content";
+import { getTechIconUrl } from "@/data/techIcons";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 import { Container } from "@/components/ui/Badge";
@@ -22,14 +23,20 @@ export default function TechStack() {
                   <h3 className="font-display text-base font-semibold text-mist-100">{cat.category}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {cat.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/8 bg-white/5 px-3 py-1.5 text-xs text-mist-300 transition-colors hover:border-violet-400/50 hover:text-violet-300"
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  {cat.items.map((item) => {
+                    const iconUrl = getTechIconUrl(item);
+                    return (
+                      <span
+                        key={item}
+                        className="flex items-center gap-1.5 rounded-full border border-white/8 bg-white/5 px-3 py-1.5 text-xs text-mist-300 transition-colors hover:border-violet-400/50 hover:text-violet-300"
+                      >
+                        {iconUrl && (
+                          <img src={iconUrl} alt="" className="h-3.5 w-3.5 rounded-sm" loading="lazy" aria-hidden="true" />
+                        )}
+                        {item}
+                      </span>
+                    );
+                  })}
                 </div>
               </GlassCard>
             );

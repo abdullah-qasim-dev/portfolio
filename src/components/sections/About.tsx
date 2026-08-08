@@ -25,7 +25,7 @@ export default function About() {
   return (
     <section id="about" className="relative py-24 sm:py-32">
       <Container className="max-w-4xl">
-        <SectionHeading tag="About" title={BIO.headline} align="left" />
+        <SectionHeading tag="About" title={BIO.headline} />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

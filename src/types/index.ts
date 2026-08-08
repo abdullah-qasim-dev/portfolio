@@ -42,7 +42,7 @@ export interface TechCategory {
 
 export interface SkillItem {
   name: string;
-  //level: number; // 0-100
+  level: number; // 0-100
 }
 
 export interface EducationItem {

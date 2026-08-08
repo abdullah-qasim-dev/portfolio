@@ -216,14 +216,17 @@ export const TECH_STACK: TechCategory[] = [
 ];
 
 export const SKILLS: SkillItem[] = [
-  { name: "Machine Learning" },
-  { name: "Natural Language Processing" },
-  { name: "Computer Vision" },
-  { name: "Data Engineering" },
-  { name: "Problem Solving" },
-  { name: "Data Structures & Algorithms" },
-  { name: "Object-Oriented Programming" },
-  { name: "Communication" },
+  { name: "Python", level: 92 },
+  { name: "Machine Learning", level: 85 },
+  { name: "NLP", level: 80 },
+  { name: "Computer Vision", level: 78 },
+  { name: "SQL", level: 85 },
+  { name: "Data Engineering", level: 75 },
+  { name: "Flask", level: 80 },
+  { name: "Problem Solving", level: 90 },
+  { name: "Data Structures & Algorithms", level: 85 },
+  { name: "OOP", level: 88 },
+  { name: "Communication", level: 82 },
 ];
 
 export const EDUCATION: EducationItem[] = [

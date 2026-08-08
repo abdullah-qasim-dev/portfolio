@@ -1,34 +1,42 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { SKILLS } from "@/data/content";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Container } from "@/components/ui/Badge";
+
+function SkillBar({ name, level, delay }: { name: string; level: number; delay: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
+
+  return (
+    <div ref={ref}>
+      <div className="mb-2 flex items-center justify-between">
+        <span className="text-sm font-medium text-mist-200">{name}</span>
+        <span className="font-mono text-xs text-cyan-400">{isInView ? level : 0}%</span>
+      </div>
+      <div className="h-2 w-full overflow-hidden rounded-full bg-white/8">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={isInView ? { width: `${level}%` } : { width: 0 }}
+          transition={{ duration: 1.1, delay, ease: "easeOut" }}
+          className="h-full rounded-full bg-gradient-to-r from-violet-500 to-cyan-400"
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function Skills() {
   return (
     <section id="skills" className="relative py-24 sm:py-32">
       <Container>
-        <SectionHeading
-          tag="Skills"
-          title="What I Bring to the Table"
-          description="The core areas I work in day to day, on top of the tools listed above."
-        />
+        <SectionHeading tag="Skills" title="What I Bring to the Table" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto flex max-w-3xl flex-wrap justify-center gap-3"
-        >
-          {SKILLS.map((skill) => (
-            <span
-              key={skill.name}
-              className="rounded-full border border-violet-400/25 bg-violet-400/[0.04] px-5 py-2.5 text-sm font-medium text-violet-200 transition-colors hover:border-violet-400/50"
-            >
-              {skill.name}
-            </span>
+        <div className="mx-auto grid max-w-4xl gap-x-12 gap-y-7 sm:grid-cols-2">
+          {SKILLS.map((skill, i) => (
+            <SkillBar key={skill.name} name={skill.name} level={skill.level} delay={(i % 2) * 0.1} />
           ))}
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

@@ -115,7 +115,6 @@ export const EXPERIENCE: ExperienceItem[] = [
     "Model Evaluation",
   ],
 },
-
   {
     role: "Software Engineer Intern",
     company: "Nepta Solutions (UK)",

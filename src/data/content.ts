@@ -89,6 +89,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     role: "AI/ML Intern",
     company: "MeissaSoft",
     period: "July 2026 – Present",
+    location: "Onsite, Lahore, Pakistan",
     status: "current",
     responsibilities: [
       "Machine Learning Development",

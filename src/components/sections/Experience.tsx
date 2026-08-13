@@ -41,7 +41,15 @@ export default function Experience() {
                       </span>
                     )}
                   </div>
-                  <p className="font-mono mt-1 text-xs text-mist-400">{exp.period}</p>
+                  <p className="font-mono mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-mist-400">
+                    <span>{exp.period}</span>
+                    {exp.location && (
+                      <>
+                        <span className="text-mist-400/40">•</span>
+                        <span>{exp.location}</span>
+                      </>
+                    )}
+                  </p>
 
                   <div className="mt-4 flex flex-wrap gap-2">
                     {exp.responsibilities.map((r) => (

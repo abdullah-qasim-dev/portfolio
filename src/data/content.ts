@@ -76,7 +76,7 @@ export const INTERESTS: Interest[] = [
 
 export const STATS: StatItem[] = [
   { label: "Projects Completed", value: 6, suffix: "+" },
-  { label: "Internships", value: 2 },
+  { label: "Internships", value: 3 },
   { label: "Certifications", value: 11, suffix: "+" },
   { label: "Programming Languages", value: 4 },
   { label: "AI Libraries", value: 10, suffix: "+" },
@@ -101,7 +101,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     ],
   },
   {
-    role: "Remote Intern",
+    role: "Software Engineer Intern",
     company: "Nepta Solutions (UK)",
     period: "June 2025 – August 2025",
     status: "past",
@@ -115,6 +115,20 @@ export const EXPERIENCE: ExperienceItem[] = [
       "Software Integration",
     ],
   },
+  {
+  role: "Data Science Intern",
+  company: "Decodelabs",
+  period: "May 2026 – June 2026",
+  status: "past",
+  responsibilities: [
+    "Data Cleaning & Preprocessing",
+    "Exploratory Data Analysis (EDA)",
+    "Data Visualization",
+    "Feature Engineering",
+    "Machine Learning Model Development",
+    "Model Evaluation",
+  ],
+},
 ];
 
 export const PROJECTS: ProjectItem[] = [

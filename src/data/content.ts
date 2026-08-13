@@ -100,6 +100,22 @@ export const EXPERIENCE: ExperienceItem[] = [
       "Team Collaboration",
     ],
   },
+
+  {
+  role: "Data Science Intern",
+  company: "Decodelabs",
+  period: "May 2026 – June 2026",
+  status: "past",
+  responsibilities: [
+    "Data Cleaning & Preprocessing",
+    "Exploratory Data Analysis (EDA)",
+    "Data Visualization",
+    "Feature Engineering",
+    "Machine Learning Model Development",
+    "Model Evaluation",
+  ],
+},
+
   {
     role: "Software Engineer Intern",
     company: "Nepta Solutions (UK)",
@@ -115,20 +131,7 @@ export const EXPERIENCE: ExperienceItem[] = [
       "Software Integration",
     ],
   },
-  {
-  role: "Data Science Intern",
-  company: "Decodelabs",
-  period: "May 2026 – June 2026",
-  status: "past",
-  responsibilities: [
-    "Data Cleaning & Preprocessing",
-    "Exploratory Data Analysis (EDA)",
-    "Data Visualization",
-    "Feature Engineering",
-    "Machine Learning Model Development",
-    "Model Evaluation",
-  ],
-},
+  
 ];
 
 export const PROJECTS: ProjectItem[] = [
